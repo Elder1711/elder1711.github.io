@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | ProjectRed</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script ENGINE="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js "></script>
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WEBGL.json", {onProgress: UnityProgress});
+      $(document).ready(function(){
+    $('a[href^="#"], *[data-href^="#"]').on('click', function(e){
+        e.preventDefault();
+        var t = 600;
+        var d = $(this).attr('data-href') ? $(this).attr('data-href') : $(this).attr('href');
+        $('html,body').stop().animate({ scrollTop: $(d).offset().top }, t);
+    });
+});
+    </script>
+  </head>
+  <body>
+  <div class="main" >
+  <div class="heder" >
+    <img src="https://cdn.discordapp.com/attachments/629212880184672256/702439289836798002/ezgif.com-gif-maker_1.jpg" alt="" class="img_main">
+    <img src="https://cdn.discordapp.com/attachments/629212880184672256/702440560744595527/COMPORATION.png" alt="" class="name">
+    <a class="home" href="#hader">Home</a><a class="game" href="#ssgame">Game</a>
+    <img src="https://cdn.discordapp.com/attachments/629212880184672256/702443336073740328/layers.png" alt="" class="bonk">
+    <img src="https://cdn.discordapp.com/attachments/629212880184672256/702439864804704327/5.png" alt="" class="bonkgame">
+    <div class="ingame" id="ssgame" style="height: 640px; width: 480px;">
+    <div class="webgl-content" style="position: absolute;">
+      <div id="unityContainer" style="width: 640px; height: 480px; "></div>
+      <div class="footer" ">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">ProjectRed</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </body>
+</html>
